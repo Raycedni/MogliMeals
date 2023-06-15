@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <repositories>
+        <repository>
+            <id>Nexus</id>
+            <url>http://192.168.178.31:8081/repository/maven-releases/</url>
+        </repository>
+        <!--        <repository>-->
+        <!--            <id>Nexus-central</id>-->
+        <!--            <url>https://repo.maven.apache.org/maven2/</url>-->
+        <!--        </repository>-->
+    </repositories>
+    <groupId>com.mogli</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mogli</groupId>
+        <artifactId>microservice-base-starter-parent</artifactId>
+        <version>0.1.1-b</version>
+    </parent>
+    <artifactId>MogliMeals</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Mealroulette</name>
+    <description>Mealroulette</description>
+    <dependencies>
+        <dependency>
+            <groupId>com.mogli</groupId>
+            <artifactId>microservice-base-starter</artifactId>
+            <version>0.2.3</version>
+        </dependency>
+
+        <!--        Swagger-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javatuples</groupId>
+            <artifactId>javatuples</artifactId>
+            <version>1.2</version>
+        </dependency>
+    </dependencies>
+</project>
