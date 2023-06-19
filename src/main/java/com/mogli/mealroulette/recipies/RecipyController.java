@@ -3,6 +3,7 @@ package com.mogli.mealroulette.recipies;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RecipyController {
     private final RecipyService recipyService;
+    private final RecipyEntityRepository recipyEntityRepository;
 
-    @GetMapping("recipy/{id}")
+    @GetMapping("recipies/{id}")
     public RecipyDto getRecipyById(@PathVariable Long id) {
         return recipyService.getRecipyById(id);
     }
@@ -31,5 +33,10 @@ public class RecipyController {
     @GetMapping("recipies/count")
     public Long getRecipyCount() {
         return recipyService.getCountOfRecipies();
+    }
+
+    @PostMapping("test")
+    public RecipyEntity testEntity(){
+        return recipyEntityRepository.save(new RecipyEntity());
     }
 }

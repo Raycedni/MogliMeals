@@ -13,6 +13,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.util.List;
 
@@ -30,8 +31,10 @@ public class RecipyEntity implements com.mogli.microservicebase.commons.Entity {
     private String bez;
     private Integer status;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "taggedRecipies")
     private List<TagEntity> tags;
+    @JsonIgnore
 
     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "recipy")
     private List<RecipyToIngridientEntity> usedIngridients;
